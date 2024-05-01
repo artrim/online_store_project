@@ -3,7 +3,7 @@
 {% block content %}
 {% load my_tags %}
     <div class="row text-center">
-        {% for object in product_list %}
+        {% for object in object_list %}
             <div class="col-4">
                 <div class="card mb-4 box-shadow">
                     <img src="{{ object.picture | media_filter }}">
@@ -12,7 +12,7 @@
                     </div>
                     <div class="card-body">
                         <h1 class="card-title pricing-card-title">{{ object.price }} руб.</h1>
-                        <a href="{% url 'catalog:product' object.pk %}" type="button" class="btn btn-lg btn-block btn-outline-primary">Подробнее</a>
+                        <a href="{% url 'catalog:product_detail' object.pk %}" type="button" class="btn btn-lg btn-block btn-outline-primary">Подробнее</a>
                     </div>
                 </div>
             </div>
