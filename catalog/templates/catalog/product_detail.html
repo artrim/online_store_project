@@ -4,7 +4,9 @@
 {% load my_tags %}
     <div class="col-3">
         <div class="card mb-4 box-shadow">
-            <img src="{{ object.picture | media_filter }}">
+            {% if object.picture %}
+                <img src="{{ object.picture | media_filter }}">
+            {% endif %}
             <div class="card-header">
                 <h4 class="my-0 font-weight-normal">{{ object.name_product }}</h4>
             </div>
