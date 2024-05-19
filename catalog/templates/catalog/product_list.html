@@ -2,6 +2,9 @@
 
 {% block content %}
 {% load my_tags %}
+    <div class="col-12 mb-5">
+        <a class="btn btn-outline-primary" href="{% url 'catalog:product_create' %}">Добавить продукт</a>
+    </div>
     <div class="row text-center">
         {% for object in object_list %}
             <div class="col-4">
@@ -12,7 +15,15 @@
                     </div>
                     <div class="card-body">
                         <h1 class="card-title pricing-card-title">{{ object.price }} руб.</h1>
+                         {% for status in object.version.all %}
+                            {% if status.is_active %}
+                                <p> Активная версия:<strong> {{ status.name_version }} </strong> </p>
+                                <p> Номер версии:<strong> {{ status.number_version }} </strong> </p>
+                            {% endif %}
+                        {% endfor %}
                         <a href="{% url 'catalog:product_detail' object.pk %}" type="button" class="btn btn-lg btn-block btn-outline-primary">Подробнее</a>
+                        <a href="{% url 'catalog:product_update' object.pk %}" type="button" class="btn btn-lg btn-block btn-outline-primary">Редактировать</a>
+                        <a href="{% url 'catalog:product_delete' object.pk %}" type="button" class="btn btn-lg btn-block btn-outline-danger">Удалить</a>
                     </div>
                 </div>
             </div>
