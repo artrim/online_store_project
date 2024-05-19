@@ -11,6 +11,12 @@
                 <h4 class="my-0 font-weight-normal">{{ object.name_product }}</h4>
             </div>
             <div class="card-body">
+                {% for status in object.version.all %}
+                    {% if status.is_active %}
+                        <p> Активная версия:<strong> {{ status.name_version }} </strong> </p>
+                        <p> Номер версии:<strong> {{ status.number_version }} </strong> </p>
+                    {% endif %}
+                {% endfor %}
                 <ul class="list-unstyled mt-3 mb-4 text-start m-3">
                     <li>- {{ object.description_product|slice:100 }}</li>
                 </ul>
