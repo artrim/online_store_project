@@ -4,3 +4,5 @@ pillow
 ipython
 black
 pytils
+django-crispy-forms
+crispy-bootstrap4
