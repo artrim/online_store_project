@@ -1,104 +1,203 @@
 [
-  {
-    "model": "catalog.category",
-    "pk": 4,
-    "fields": {
-      "name_category": "Категория1",
-      "description_category": null
+    {
+        "model": "catalog.category",
+        "pk": 4,
+        "fields": {
+            "name_category": "Категория1",
+            "description_category": null
+        }
+    },
+    {
+        "model": "catalog.category",
+        "pk": 5,
+        "fields": {
+            "name_category": "Категория2",
+            "description_category": "Описание второй категории"
+        }
+    },
+    {
+        "model": "catalog.category",
+        "pk": 6,
+        "fields": {
+            "name_category": "Категория3",
+            "description_category": "Описание третьей категории"
+        }
+    },
+    {
+        "model": "catalog.product",
+        "pk": 9,
+        "fields": {
+            "name_product": "тестовый",
+            "description_product": "222",
+            "picture": "",
+            "category": 4,
+            "price": "221.00",
+            "created_at": "2024-04-20T18:08:31.844Z",
+            "updated_at": "2024-05-19T10:19:32.476Z"
+        }
+    },
+    {
+        "model": "catalog.product",
+        "pk": 10,
+        "fields": {
+            "name_product": "Товар3",
+            "description_product": "еее",
+            "picture": "",
+            "category": 6,
+            "price": "111.00",
+            "created_at": "2024-04-20T18:08:31.844Z",
+            "updated_at": "2024-05-19T10:46:05.635Z"
+        }
+    },
+    {
+        "model": "catalog.product",
+        "pk": 13,
+        "fields": {
+            "name_product": "Котик!",
+            "description_product": "чистый котик",
+            "picture": "products/котик_помылся.jpg",
+            "category": 4,
+            "price": "0.00",
+            "created_at": "2024-04-24T16:40:38.486Z",
+            "updated_at": "2024-05-19T10:42:47.673Z"
+        }
+    },
+    {
+        "model": "catalog.product",
+        "pk": 16,
+        "fields": {
+            "name_product": "Второй Котик",
+            "description_product": "это ВТОРОЙ",
+            "picture": "products/котик_1.jpeg",
+            "category": 5,
+            "price": "0.00",
+            "created_at": "2024-04-24T17:37:27.866Z",
+            "updated_at": "2024-05-19T10:56:26.746Z"
+        }
+    },
+    {
+        "model": "catalog.product",
+        "pk": 17,
+        "fields": {
+            "name_product": "Третий Котик",
+            "description_product": "\"я третий\" - говорит он",
+            "picture": "products/котик_loading.jpeg",
+            "category": 5,
+            "price": "0.00",
+            "created_at": "2024-04-24T17:38:40.713Z",
+            "updated_at": "2024-05-16T17:07:23.395Z"
+        }
+    },
+    {
+        "model": "catalog.product",
+        "pk": 26,
+        "fields": {
+            "name_product": "Тест версии",
+            "description_product": "ывапро",
+            "picture": "",
+            "category": null,
+            "price": "11.00",
+            "created_at": "2024-05-19T10:19:05.006Z",
+            "updated_at": "2024-05-19T10:19:05.086Z"
+        }
+    },
+    {
+        "model": "catalog.blog",
+        "pk": 3,
+        "fields": {
+            "title": "Test 3!",
+            "slug": "test-3",
+            "body": "Test 3",
+            "preview": "",
+            "created_at": "2024-05-01T13:42:47.055Z",
+            "is_published": true,
+            "views_count": 9
+        }
+    },
+    {
+        "model": "catalog.blog",
+        "pk": 4,
+        "fields": {
+            "title": "тест слаг",
+            "slug": "test-slag",
+            "body": "тест слаг",
+            "preview": "",
+            "created_at": "2024-05-01T14:32:38.429Z",
+            "is_published": true,
+            "views_count": 4
+        }
+    },
+    {
+        "model": "catalog.blog",
+        "pk": 13,
+        "fields": {
+            "title": "Блог с изображением",
+            "slug": "blog-s-izobrazheniem",
+            "body": "просто тестирую",
+            "preview": "blog/ухватился_за_унитаз.jpeg",
+            "created_at": "2024-05-01T15:32:39.302Z",
+            "is_published": true,
+            "views_count": 7
+        }
+    },
+    {
+        "model": "catalog.version",
+        "pk": 3,
+        "fields": {
+            "product": 16,
+            "number_version": 1,
+            "name_version": "first",
+            "is_active": false
+        }
+    },
+    {
+        "model": "catalog.version",
+        "pk": 5,
+        "fields": {
+            "product": 26,
+            "number_version": 21,
+            "name_version": "тестовая",
+            "is_active": true
+        }
+    },
+    {
+        "model": "catalog.version",
+        "pk": 6,
+        "fields": {
+            "product": 9,
+            "number_version": 1,
+            "name_version": "первая",
+            "is_active": true
+        }
+    },
+    {
+        "model": "catalog.version",
+        "pk": 8,
+        "fields": {
+            "product": 13,
+            "number_version": 2,
+            "name_version": "33",
+            "is_active": true
+        }
+    },
+    {
+        "model": "catalog.version",
+        "pk": 9,
+        "fields": {
+            "product": 10,
+            "number_version": 1,
+            "name_version": "первая",
+            "is_active": true
+        }
+    },
+    {
+        "model": "catalog.version",
+        "pk": 10,
+        "fields": {
+            "product": 16,
+            "number_version": 2,
+            "name_version": "вторая",
+            "is_active": true
+        }
     }
-  },
-  {
-    "model": "catalog.category",
-    "pk": 5,
-    "fields": {
-      "name_category": "Категория2",
-      "description_category": "Описание второй категории"
-    }
-  },
-  {
-    "model": "catalog.category",
-    "pk": 6,
-    "fields": {
-      "name_category": "Категория3",
-      "description_category": "Описание третьей категории"
-    }
-  },
-  {
-    "model": "catalog.product",
-    "pk": 8,
-    "fields": {
-      "name_product": "Товар1",
-      "description_product": "Описание товара1",
-      "picture": "",
-      "category": 4,
-      "price": 123,
-      "created_at": "2024-04-20T18:08:31.844Z",
-      "updated_at": "2024-04-20T18:08:31.844Z"
-    }
-  },
-  {
-    "model": "catalog.product",
-    "pk": 9,
-    "fields": {
-      "name_product": "Товар2",
-      "description_product": "Описание товара2",
-      "picture": "",
-      "category": 4,
-      "price": 221,
-      "created_at": "2024-04-20T18:08:31.844Z",
-      "updated_at": "2024-04-20T18:08:31.844Z"
-    }
-  },
-  {
-    "model": "catalog.product",
-    "pk": 10,
-    "fields": {
-      "name_product": "Товар3",
-      "description_product": "",
-      "picture": "",
-      "category": 6,
-      "price": 111,
-      "created_at": "2024-04-20T18:08:31.844Z",
-      "updated_at": "2024-04-20T18:08:31.844Z"
-    }
-  },
-  {
-    "model": "catalog.product",
-    "pk": 13,
-    "fields": {
-      "name_product": "Котик",
-      "description_product": "чистый котик",
-      "picture": "products/котик_помылся.jpg",
-      "category": 4,
-      "price": 0,
-      "created_at": "2024-04-24T16:40:38.486Z",
-      "updated_at": "2024-04-24T16:40:38.486Z"
-    }
-  },
-  {
-    "model": "catalog.product",
-    "pk": 16,
-    "fields": {
-      "name_product": "Второй Котик",
-      "description_product": "это ВТОРОЙ",
-      "picture": "products/котик_1.jpeg",
-      "category": 5,
-      "price": 0,
-      "created_at": "2024-04-24T17:37:27.866Z",
-      "updated_at": "2024-04-24T17:37:27.866Z"
-    }
-  },
-  {
-    "model": "catalog.product",
-    "pk": 17,
-    "fields": {
-      "name_product": "Третий Котик",
-      "description_product": "\"я третий\" - говорит он",
-      "picture": "products/котик_loading.jpeg",
-      "category": 5,
-      "price": 0,
-      "created_at": "2024-04-24T17:38:40.713Z",
-      "updated_at": "2024-04-24T17:38:40.713Z"
-    }
-  }
 ]
