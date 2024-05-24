@@ -18,7 +18,6 @@
                     </div>
                     <div class="card-body">
                         {{ form|crispy }}
-<!--                        {{ form.as_p }}-->
                         <button type="submit" class="btn btn-success">
                             {% if object %}
                                 Сохранить
@@ -37,10 +36,12 @@
                     </div>
                     <div class="card-body">
                         {{ formset.management_form }}
-<!--                        {% for form in formset.forms %}-->
-                        {{ form|crispy }}
-<!--                            {{ form.as_p }}-->
-<!--                        {% endfor %}-->
+                        {% for form in formset.forms %}
+                            {{ form|crispy }}
+                            {% if not forloop.last %}
+                                <hr>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
