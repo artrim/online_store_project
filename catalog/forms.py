@@ -6,7 +6,7 @@ from catalog.models import Product, Version
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ('name_product', 'description_product', 'picture', 'price',)
+        fields = ('name_product', 'description_product', 'picture', 'price', 'category', 'is_published',)
 
     def clean_name_product(self):
         cleaned_data = self.cleaned_data['name_product']
@@ -27,6 +27,12 @@ class ProductForm(forms.ModelForm):
                 raise forms.ValidationError(f'В описании содержится запрещенное слово "{i}"')
 
         return cleaned_data
+
+
+class ProductModeratorForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ('description_product', 'category', 'is_published',)
 
 
 class VersionForm(forms.ModelForm):
