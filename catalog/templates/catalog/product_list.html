@@ -23,9 +23,14 @@
                                 <p> Номер версии:<strong> {{ status.number_version }} </strong> </p>
                             {% endif %}
                         {% endfor %}
+                        {% if perms.catalog.can_edit_category and perms.catalog.can_edit_description_product and perms.catalog.can_edit_is_published or user == object.product_user %}
+                            <a href="{% url 'catalog:product_update' object.pk %}" type="button" class="btn btn-lg btn-block btn-outline-primary">Редактировать</a>
+                        {% endif %}
+                        {% if user == object.product_user or user.is_superuser %}
+                            <a href="{% url 'catalog:product_delete' object.pk %}" type="button" class="btn btn-lg btn-block btn-outline-danger">Удалить</a>
+                        {% endif %}
                         <a href="{% url 'catalog:product_detail' object.pk %}" type="button" class="btn btn-lg btn-block btn-outline-primary">Подробнее</a>
-                        <a href="{% url 'catalog:product_update' object.pk %}" type="button" class="btn btn-lg btn-block btn-outline-primary">Редактировать</a>
-                        <a href="{% url 'catalog:product_delete' object.pk %}" type="button" class="btn btn-lg btn-block btn-outline-danger">Удалить</a>
+
                     </div>
                 </div>
             </div>
