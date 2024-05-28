@@ -41,12 +41,19 @@ class Product(models.Model):
     product_user = models.ForeignKey(User, verbose_name='Пользователь', on_delete=models.SET_NULL,
                                      related_name="products", **NULLABLE)
 
+    is_published = models.BooleanField(default=False, verbose_name='опубликовано')
+
     def __str__(self):
         return self.name_product
 
     class Meta:
         verbose_name = "Товар"
         verbose_name_plural = "Товары"
+        permissions = [
+            ('can_edit_category', 'Can edit category'),
+            ('can_edit_description_product', 'Can edit description product'),
+            ('can_edit_is_published', 'Can edit is published')
+        ]
 
 
 class Blog(models.Model):
