@@ -7,3 +7,4 @@ pytils
 django-crispy-forms
 crispy-bootstrap4
 python-dotenv
+redis
