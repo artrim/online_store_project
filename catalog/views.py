@@ -8,7 +8,8 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from pytils.translit import slugify
 
 from catalog.forms import ProductForm, VersionForm, ProductModeratorForm
-from catalog.models import Product, Blog, Version
+from catalog.models import Product, Blog, Version, Category
+from catalog.services import get_category_from_cache
 
 
 class ProductListView(ListView):
@@ -169,3 +170,10 @@ class BlogDetailView(DetailView):
 class BlogDeleteView(DeleteView):
     model = Blog
     success_url = reverse_lazy('catalog:blog_list')
+
+
+class CategoryListView(LoginRequiredMixin, ListView):
+    model = Category
+
+    def get_queryset(self):
+        return get_category_from_cache()
